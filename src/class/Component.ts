@@ -12,8 +12,7 @@ export class Component extends BaseEvent {
         children?: string | Node[]
     ) {
         super()
-        let dom = $(desc, props, children)
-        this.el = dom
+        this.el = $(desc, props, children)
         this.container = container
         if (props) {
             if (props.id) this.el.id = props.id
@@ -26,19 +25,19 @@ export class Component extends BaseEvent {
         }
         // 安装组件成功
         if (container) {
-            container.appendChild(dom)
+            container.appendChild(this.el)
         }
     }
 
-    init() {}
-    initEvent() {}
-    initPCEvent() {}
-    initMobileEvent() {}
-    initTemplate() {}
-    initPCTemplate() {}
-    initMobileTemplate() {}
-    initComponent() {}
-    resetEvent() {}
+    init() { }
+    initEvent() { }
+    initPCEvent() { }
+    initMobileEvent() { }
+    initTemplate() { }
+    initPCTemplate() { }
+    initMobileTemplate() { }
+    initComponent() { }
+    resetEvent() { }
     // 销毁组件
-    dispose() {}
+    dispose() { }
 }

@@ -94,9 +94,8 @@ class DownLoader {
 
     initHttpRequest(): HTTPRequest {
         let xhr = new XMLHttpRequest()
-        let header: RequestHeader = {}
-        ;(xhr as XMLHttpRequest & { [props: string]: any }).start =
-            this.chunkStart
+        let header: RequestHeader = {};
+        (xhr as XMLHttpRequest & { [props: string]: any }).start = this.chunkStart
         if (this.chunkStart + this.chunkSize < Infinity) {
             let endRange = 0
             // chunkStart to (chunkStart + chunkSize - 1)

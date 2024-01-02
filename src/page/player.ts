@@ -70,6 +70,7 @@ class Player extends Component implements ComponentItem {
     private mediaProportion: number = 9 / 16;
     static player = this;
     constructor(options?: PlayerOptions) {
+        //基于des创建一个元素放到container里面 创建算法在domUtils
         super(options.container, 'div.Niplayer_video-wrapper')
         this.playerOptions = Object.assign(
             {
@@ -287,7 +288,7 @@ class Player extends Component implements ComponentItem {
             console.log(e.key)
             switch (e.key) {
                 case 'f':
-                    ;(
+                    ; (
                         ONCE_COMPONENT_STORE.get('FullScreen') as FullScreen
                     ).requestFullScreen()
                     break
@@ -511,7 +512,7 @@ class Player extends Component implements ComponentItem {
     }
 
     // 查询移动端的全屏方式
-    checkFullScreenMode() {}
+    checkFullScreenMode() { }
 
     // 注册/挂载自己的组件,其中的id为组件实例的名称，分为内置和用户自定义这两种情况；
     // 注意，id是唯一的，不能存在两个具有相同id的组件实例!!!
@@ -666,7 +667,7 @@ class Player extends Component implements ComponentItem {
     }
 
     // 注册一个设置选项
-    registerSubsetting() {}
+    registerSubsetting() { }
 
     // 获取视频信息
     getVideoInfo(): Video {

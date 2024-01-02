@@ -8,10 +8,8 @@
             http-equiv="Content-Security-Policy"
             content="upgrade-insecure-requests"
         />
-        <script src="./dist/player.umd.js"></script>
+        <!-- <script src="./dist/player.umd.js"></script> -->
 
-        <!-- 在vite dev模式下使用 -->
-        <script type="module" src="./src/index.ts"></script>
         <title>NiPlayer</title>
         <style>
             html,
@@ -31,9 +29,10 @@
     <body>
         <!-- <iframe width="1466" height="545" src="https://www.youtube.com/embed/eFAYZF9Mty4" title="Boston Celtics vs Miami Heat Game 5 Full Highlights | 2023 ECF | FreeDawkins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
         <div id="video"></div>
-        <script>
+        <script type="module">
+            import Player from "./src/index.ts"
             window.onload = function () {
-                let player = new Player.default({
+                let player = new Player({                    
                     url: 'https://novaex.cc/fireworks.mp4',
                     container: document.getElementById('video'),
                     streamPlay: true,
